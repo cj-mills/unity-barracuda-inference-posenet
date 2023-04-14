@@ -194,7 +194,7 @@ namespace CJM.BarracudaInference.PoseNet
         /// <summary>
         /// Processes the output tensors and returns an array of detected human poses.
         /// </summary>
-        /// <param name="useSinglePoseDecoding">True to use single pose decoding, false to use multiple pose decoding.</param>
+        /// <param name="useMultiPoseDecoding">True to use multiple pose decoding, false to use single pose decoding.</param>
         /// <param name="maxPoses">The maximum number of poses to detect.</param>
         /// <returns>An array of detected human poses.</returns>
         public HumanPose2D[] ProcessOutput(float scoreThreshold, int nmsRadius, int maxPoses = 20, bool useSinglePoseDecoding = true)
@@ -214,7 +214,15 @@ namespace CJM.BarracudaInference.PoseNet
             stride -= (stride % 8);
 
             // Decide whether to use single pose decoding or multiple pose decoding
-            if (useSinglePoseDecoding)
+            if (useMultiPoseDecoding)
+            {
+                // Decode multiple poses and store them in the humanPoses list
+                humanPoses = DecodeMultiplePoses(
+                    heatmaps, offsets,
+                    displacementFWD, displacementBWD,
+                    stride, maxPoses, scoreThreshold, nmsRadius);   
+            }
+            else
             {
                 // Decode a single pose and add it to the humanPoses list
                 HumanPose2D pose = new HumanPose2D
@@ -223,14 +231,6 @@ namespace CJM.BarracudaInference.PoseNet
                     bodyParts = DecodeSinglePose(heatmaps, offsets, stride)
                 };
                 humanPoses.Add(pose);
-            }
-            else
-            {
-                // Decode multiple poses and store them in the humanPoses list
-                humanPoses = DecodeMultiplePoses(
-                    heatmaps, offsets,
-                    displacementFWD, displacementBWD,
-                    stride, maxPoses, scoreThreshold, nmsRadius);
             }
 
             // Unload unused assets if needed
