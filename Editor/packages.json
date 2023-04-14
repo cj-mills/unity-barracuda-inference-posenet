@@ -1,0 +1,12 @@
+{
+    "packages": [
+        {
+            "packageName": "com.cj-mills.barracuda-inference-base",
+            "packageUrl": "https://github.com/cj-mills/unity-barracuda-inference-base.git"
+        },
+        {
+            "packageName": "com.cj-mills.human-pose-2d-toolkit",
+            "packageUrl": "https://github.com/cj-mills/unity-human-pose-2d-toolkit.git"
+        }
+    ]
+}
