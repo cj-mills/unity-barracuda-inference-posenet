@@ -1,5 +1,5 @@
 # Unity Barracuda Inference PoseNet
-This Unity package extends the functionality of the barracuda-inference-base package to perform 2D human pose estimation using PoseNet models. 
+This Unity package extends the functionality of the [barracuda-inference-base](https://github.com/cj-mills/unity-barracuda-inference-base) package to perform 2D human pose estimation using PoseNet models. 
 
 ## Demo Video
 https://user-images.githubusercontent.com/9126128/232156999-217ed86b-6496-4f31-8c54-5fc60e68e3cd.mp4
