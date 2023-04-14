@@ -197,7 +197,7 @@ namespace CJM.BarracudaInference.PoseNet
         /// <param name="useMultiPoseDecoding">True to use multiple pose decoding, false to use single pose decoding.</param>
         /// <param name="maxPoses">The maximum number of poses to detect.</param>
         /// <returns>An array of detected human poses.</returns>
-        public HumanPose2D[] ProcessOutput(float scoreThreshold, int nmsRadius, int maxPoses = 20, bool useSinglePoseDecoding = true)
+        public HumanPose2D[] ProcessOutput(float scoreThreshold, int nmsRadius, int maxPoses = 20, bool useMultiPoseDecoding = true)
         {
             // Initialize a list to store the detected human poses
             List<HumanPose2D> humanPoses = new List<HumanPose2D>();
