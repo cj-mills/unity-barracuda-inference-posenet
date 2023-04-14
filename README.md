@@ -4,6 +4,10 @@ This Unity package extends the functionality of the [barracuda-inference-base](h
 ## Demo Video
 https://user-images.githubusercontent.com/9126128/232156999-217ed86b-6496-4f31-8c54-5fc60e68e3cd.mp4
 
+## Demo Project
+
+* **GitHub Repository:** [barracuda-inference-posenet-demo](https://github.com/cj-mills/barracuda-inference-posenet-demo)
+
 ## Features
 
 - Easy integration with PoseNet models
