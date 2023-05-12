@@ -8,6 +8,9 @@ https://user-images.githubusercontent.com/9126128/232156999-217ed86b-6496-4f31-8
 
 * **GitHub Repository:** [barracuda-inference-posenet-demo](https://github.com/cj-mills/barracuda-inference-posenet-demo)
 
+## Code Walkthrough
+* [Code Walkthrough: Unity Barracuda Inference PoseNet Package](https://christianjmills.com/posts/unity-barracuda-inference-posenet-walkthrough/)
+
 ## Features
 
 - Easy integration with PoseNet models
